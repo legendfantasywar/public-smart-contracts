@@ -71,6 +71,7 @@ contract LGEWhitelisted is Context {
         uint256[] calldata amountsMax
     ) external onlyWhitelister {
         require(durations.length == amountsMax.length, "Invalid whitelist(s)");
+        require(pairAddress != address(0), "Invalid pair address");
 
         _lgePairAddress = pairAddress;
 
