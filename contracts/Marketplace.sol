@@ -288,7 +288,7 @@ contract Marketplace is
                 tokenId[i],
                 amount[i]
             );
-            listingId.add(1);
+            listingId = listingId.add(1);
             itemListings[nftAddress][listingId] = listing;
             emit ItemListingCreated(
                 seller,
@@ -342,7 +342,7 @@ contract Marketplace is
         uint256 _price
     ) external onlyItemSeller(nftAddress, _listingId) {
         itemListings[nftAddress][_listingId].price = _price;
-        emit ListingUpdated(_listingId, _price);
+        emit ItemListingUpdated(_listingId, _price);
     }
 
     /**
